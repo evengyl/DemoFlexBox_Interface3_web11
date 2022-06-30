@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+h1{
+    text-align: center;
+}
+
+.container{
+    height: 800px;
+    border:5px solid grey;
+    width: 80%;
+    margin:auto;
+    margin-top:20px;
+    display: flex;
+/* 
+    flex-direction: row;
+    flex-wrap: wrap; */
+
+    
+
+    /*------------------*/
+    /* flex-flow        */
+    /* abréviation de flex-direction et flex-wrap */
+    /*------------------*/
+    /* Permet de définir l'orientation des block, 
+    en ligne ou en colonne et leur inverse
+    cela défini en fait ! l'axe PRINCIPALE !, 
+    le wrap et nowrap permet de dire ok passe a la ligne
+     si tu n'as plus de place ou pas */
+    flex-flow: row wrap;
+
+
+
+    /*------------------*/
+    /* justify-content  */
+    /*------------------*/
+    /* Le justify-content permet de gérer l'espacement
+     entre les enfants suivant l'axe principale !!! */
+
+    /* justify-content:flex-start;
+    justify-content:flex-end;
+    justify-content:center;
+    justify-content:space-around;
+    justify-content:space-between; */
+    justify-content:space-evenly;
+
+
+    /*------------------*/
+    /* align-content    */
+    /*------------------*/
+    /* Le align-content permet de gérer l'espacement
+     entre les enfants suivant l'axe secondaire !!! */
+
+    /* align-content:flex-start;
+    align-content:flex-end;
+    align-content:center;
+    align-content:space-around;
+    align-content:space-between; */
+    align-content:space-evenly;
+
+
+
+    /*------------------*/
+    /* align-item       */
+    /*------------------*/
+    /* permet de définir le placement sur l'axe cross, donc l'axe secondaire !
+    attention que suivant l'axe principale utilisé, ! ça n'a pas les même effet !*/
+    align-items: center;
+    /*align-items: stretch;
+    align-items: flex-end;
+    align-items: flex-start; */
+
+
+    /*------------------*/
+    /* gap              */
+    /*------------------*/
+    /* le gap permet de créer des goutière, sorte de margin,
+    pour surplomber le justify et le align*/
+    
+    /*
+    gap:20px;
+    
+    row-gap:10px;
+    column-gap:20px;
+    gap:10px 20px;
+    */
+}
+
+
+.container > .box{
+    height: 150px;
+    border:5px solid crimson;
+    width:30%;
+    background-color: rgb(169, 169, 169);
+}
+
+
+.container > .box.hl{
+    /*------------------*/
+    /* order            */
+    /*------------------*/
+    /* permet de changer l'ordre d'affichage d'un enfant
+    le plus petit order sera en premier ainsi de suite vers le plus grand order
+    attention, par défaut le order est de 0 !! donc -1 est plus petit que 0 !!!*/
+    /* order:-1; */
+
+    /* flex-grow flex-shrink flex-basis */
+    /*flex-grow:10;*/
+}
+
+
+
+
+
+
+
+
+/* Flex-grow */
+
+#content {
+    display: flex;
+
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: stretch;
+}
+
+#content > div{
+    border: 3px solid rgba(0,0,0,.2);
+}
+  
+#content .boxx1 {
+    flex-grow: 10;
+}
+
+#content .boxx2 {
+    flex-grow: 2;
+}
+
+#content .boxx3 {
+    flex-grow: 3;
+}
+
+
+
+
+
+
+
+
+
+/* Flex-shrink */
+
+#content2 {
+    display: flex;
+    flex-flow:row nowrap;
+}
+  
+#content2 div {
+    flex-basis: 420px;
+    border: 3px solid rgba(0,0,0,.2);
+
+}
+  
+#content2 .box1 {
+    flex-shrink: 2;
+}
+  
+#content2 .box2 {
+    flex-shrink: 4;
+}
+
+#content2 .box3 {
+    flex-shrink: 6;
+}
