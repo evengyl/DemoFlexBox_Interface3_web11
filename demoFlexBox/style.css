@@ -25,6 +25,11 @@ img{
 header{
     background-color: bisque;
     height:100px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
 }
 
 header ul{
@@ -38,21 +43,27 @@ header ul{
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    gap:20px;
 }
 
 header ul li{
+    border:1px solid grey;
+    padding: 10px;
 }
 
-section{
-    background-color: darkgray;
+header img{
+    flex:0 1 200px;
 }
-
 
 
 
 
 
 section.card{
+    background-color:chocolate;
+    min-height:450px;
+    padding-top:20px;
+    padding-bottom:20px;
     display: flex;
     flex-flow:row wrap;
 
@@ -63,13 +74,16 @@ section.card{
 }
 
 section.card article{
-    height:450px;
+    background-color: white;
     border:1px solid black;
-    flex-grow:0;
-    /* flex-shrink: ; */
-    /* flex-basis: ; */
-    /* flex:; */
-    /* align-self: ; */
+    height:350px;
+    /* flex-grow:0;
+    flex-shrink:1;
+    flex-basis:200px; */
+
+    flex:0 1 320px;
+/* 
+    align-self:start; */
 }
 
 section.card article img{
@@ -87,16 +101,23 @@ section.card article img{
 
 
 section.list{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: stretch;
+    background-color: cadetblue;
+    padding-top:20px;
+    padding-bottom:20px;
 
+    display: flex;
+    flex-flow:column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:20px;
 }
 
 section.list article{
-    height: 50px;
+    background-color: white;
     border:1px solid black;
+    width:90%;
+
+    flex:0 1 100px;
 }
 
 footer{
